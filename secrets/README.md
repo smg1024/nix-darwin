@@ -5,7 +5,9 @@ aspect. Do not commit plaintext secrets.
 
 ## Current setup
 
-- Secret file: `secrets/poby.yaml`
+- Secret files:
+  - `secrets/github.yaml`: GitHub SSH key and GitHub CLI token
+  - `secrets/ssh.yaml`: non-GitHub SSH private keys
 - SOPS rules: `.sops.yaml`
 - Age key file: `~/.config/sops/age/keys.txt`
 - Environment variable: `SOPS_AGE_KEY_FILE`, exported by the `secrets` aspect
@@ -22,8 +24,11 @@ aspect. Do not commit plaintext secrets.
 From the repository root, open the encrypted secret file:
 
 ```bash
-sops secrets/poby.yaml
+sops secrets/ssh.yaml
 ```
+
+After Home Manager has applied the `secrets` aspect, it exports
+`SOPS_AGE_KEY_FILE` so SOPS uses `~/.config/sops/age/keys.txt` by default.
 
 Add a top-level key name and paste the private key as a YAML block scalar. The
 key name should match the Nix declaration you will add later.
@@ -39,18 +44,18 @@ Save and quit the editor. SOPS will re-encrypt the file automatically.
 
 Do not edit the `sops:` metadata block manually.
 
-If this machine has not applied the Home Manager config yet, set the age key
-file explicitly for the command:
+If SOPS cannot find the age key automatically, set the key file explicitly for
+the command:
 
 ```bash
-SOPS_AGE_KEY_FILE="$HOME/.config/sops/age/keys.txt" sops secrets/poby.yaml
+SOPS_AGE_KEY_FILE="$HOME/.config/sops/age/keys.txt" sops secrets/ssh.yaml
 ```
 
 If the system package set has not been applied yet, run the command from a
 temporary shell with `sops`:
 
 ```bash
-nix-shell -p sops --run 'sops secrets/poby.yaml'
+nix-shell -p sops --run 'sops secrets/ssh.yaml'
 ```
 
 ## Generate a new SSH key first
@@ -67,7 +72,7 @@ Register the public key wherever the remote service expects it:
 cat ~/.ssh/workstation_ssh_key.pub
 ```
 
-Then copy the private key contents into `secrets/poby.yaml` with SOPS.
+Then copy the private key contents into `secrets/ssh.yaml` with SOPS.
 
 After the private key is stored in SOPS and deployed through `sops-nix`, remove
 any temporary plaintext private key if it is no longer needed outside this repo.
@@ -78,16 +83,25 @@ Add the secret name to `modules/aspects/_secrets/sops.nix`:
 
 ```nix
 secrets = {
-  "github_ssh_key" = {};
-  "github_cli_token" = {};
-  "kmeat_mac_mini_ssh_key" = {};
-  "workstation_ssh_key" = {};
+  "github_ssh_key" = {
+    sopsFile = secretFiles.github;
+  };
+  "github_cli_token" = {
+    sopsFile = secretFiles.github;
+  };
+  "kmeat_mac_mini_ssh_key" = {
+    sopsFile = secretFiles.ssh;
+  };
+  "workstation_ssh_key" = {
+    sopsFile = secretFiles.ssh;
+  };
 };
 ```
 
-The `secrets` aspect sets `sops.defaultSopsFile` from
-`repo.user.secretFile`, which defaults to `secrets/poby.yaml` in
-`modules/flake/options.nix`.
+The `secrets` aspect reads `repo.user.secretFiles`, which defaults to
+`secrets/github.yaml` and `secrets/ssh.yaml` in `modules/flake/options.nix`.
+GitHub-specific credentials should use `secretFiles.github`; SSH keys for hosts
+or services should use `secretFiles.ssh`.
 
 ## Use the secret for SSH
 
@@ -105,18 +119,20 @@ Reference the SOPS-managed secret path from the matching SSH host block in
 
 ## Verify
 
-Confirm the encrypted file contains the expected top-level secret names without
+Confirm the encrypted files contain the expected top-level secret names without
 printing secret values:
 
 ```bash
-sops -d secrets/poby.yaml \
-  | awk -F: '/^[A-Za-z0-9_]+:/ { print $1 }'
+for file in secrets/github.yaml secrets/ssh.yaml; do
+  printf '%s:\n' "$file"
+  sops -d "$file" | awk -F: '/^[A-Za-z0-9_]+:/ { print "  " $1 }'
+done
 ```
 
 Confirm no plaintext private key was written into the encrypted file:
 
 ```bash
-rg -n "BEGIN OPENSSH PRIVATE KEY|END OPENSSH PRIVATE KEY" secrets/poby.yaml
+rg -n "BEGIN OPENSSH PRIVATE KEY|END OPENSSH PRIVATE KEY" secrets/*.yaml
 ```
 
 Expected result: no output.
