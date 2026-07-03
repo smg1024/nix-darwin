@@ -41,11 +41,12 @@ $HOME/.config/sops/age/keys.txt
 - `modules/aspects/_editor/`: NVF and Zed editor configuration
 - `modules/aspects/_browser/`: Zen Browser policies, profile settings,
   extensions, containers, spaces, and pinned tabs
-- `modules/aspects/_secrets/`: `sops-nix` declarations and Home Manager session
-  variables
+- `modules/aspects/_secrets/`: `sops-nix` declarations, age key wiring, and
+  the Home Manager `SOPS_AGE_KEY_FILE` session variable
 - `hosts/`: auto-discovered host declarations that register `system` and a flat
   `features` list
-- `secrets/`: encrypted secret files (`poby.yaml`)
+- `secrets/`: encrypted secret files split by purpose (`github.yaml`,
+  `ssh.yaml`)
 
 ## Common commands
 
@@ -87,15 +88,15 @@ just gc
 
 - `flake.nix` uses `flake-parts`, keeps `./modules/flake` explicit, and
   auto-discovers `./modules/aspects` and `./hosts` through `import-tree`.
-- `hosts/fenrir.nix` is the current host declaration and maps `fenrir` to one
-  flat feature list.
+- `hosts/fenrir.nix` and `hosts/huginn.nix` declare the available macOS hosts
+  and map each host to one flat feature list.
 - `modules/flake/darwin-configurations.nix` assembles each host's
   `darwinConfigurations.<host>` output and embeds Home Manager for user `poby`.
 - `modules/aspects/` is the feature vocabulary for hosts. The current feature
   set is `base`, `nix-core`, `system-packages`, `homebrew`, `macos-defaults`,
   `activation`, `fonts`, `sudo-auth`, `shell`, `cli-tools`, `git`, `ssh`,
   `secrets`, `terminal`, `hammerspoon`, `editor`, `browser`, `discord`,
-  `desktop`, and `fenrir`.
+  `desktop`, `fenrir`, and `huginn`.
 - The `cli-tools` aspect owns the CLI user tool set, including `zoxide`.
 - The `editor` aspect imports both NVF and Zed. Zed is configured through Home
   Manager with mutable user settings and keymaps enabled, the `nix` extension,
@@ -123,10 +124,9 @@ just gc
 
 - Keep secrets encrypted in `secrets/*.yaml`.
 - `.sops.yaml` enforces encryption rules for `secrets/.*\.yaml`.
-- Home Manager reads from `secrets/poby.yaml` via the `secrets` aspect:
-  - `github_ssh_key`
-  - `github_cli_token`
-  - `kmeat_mac_mini_ssh_key`
+- Home Manager reads split SOPS files via the `secrets` aspect:
+  - `secrets/github.yaml`: `github_ssh_key`, `github_cli_token`
+  - `secrets/ssh.yaml`: `kmeat_mac_mini_ssh_key`
 
 ## Troubleshooting
 

@@ -2,6 +2,10 @@
   ageKeyFile = "${config.home.homeDirectory}/.config/sops/age/keys.txt";
   secretFiles = config.repo.user.secretFiles;
 in {
+  home.sessionVariables = {
+    SOPS_AGE_KEY_FILE = ageKeyFile;
+  };
+
   sops = {
     age.keyFile = ageKeyFile;
 

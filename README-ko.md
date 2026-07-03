@@ -39,9 +39,10 @@ nix-darwin 안에 통합해서 사용합니다.
 - `modules/aspects/_editor/`: NVF와 Zed 에디터 설정
 - `modules/aspects/_browser/`: Zen Browser 정책, 프로필 설정, 확장,
   컨테이너, 스페이스, 고정 탭 설정
-- `modules/aspects/_secrets/`: `sops-nix` 선언과 Home Manager 세션 변수
+- `modules/aspects/_secrets/`: `sops-nix` 선언, age 키 경로 설정, Home
+  Manager `SOPS_AGE_KEY_FILE` 세션 변수
 - `hosts/`: `system`과 flat `features` 목록을 등록하는 자동 발견 호스트 선언
-- `secrets/`: 암호화된 시크릿 파일(`poby.yaml`)
+- `secrets/`: 목적별로 나눈 암호화 시크릿 파일(`github.yaml`, `ssh.yaml`)
 
 ## 자주 쓰는 명령
 
@@ -83,8 +84,8 @@ just gc
 
 - `flake.nix`는 `flake-parts`를 사용하고 `./modules/flake`는 명시적으로
   유지한 채 `import-tree`로 `./modules/aspects`와 `./hosts`를 자동 발견합니다.
-- `hosts/fenrir.nix`가 현재 호스트 선언이며 `fenrir`를 하나의 flat feature
-  목록에 매핑합니다.
+- `hosts/fenrir.nix`와 `hosts/huginn.nix`가 사용 가능한 macOS 호스트를
+  선언하고, 각 호스트를 하나의 flat feature 목록에 매핑합니다.
 - `modules/flake/darwin-configurations.nix`가 각 호스트의
   `darwinConfigurations.<host>`를 만들고, 사용자 `poby`의 Home Manager를
   nix-darwin 안에 통합합니다.
@@ -92,7 +93,7 @@ just gc
   집합은 `base`, `nix-core`, `system-packages`, `homebrew`,
   `macos-defaults`, `activation`, `fonts`, `sudo-auth`, `shell`,
   `cli-tools`, `git`, `ssh`, `secrets`, `terminal`, `hammerspoon`, `editor`,
-  `browser`, `discord`, `desktop`, `fenrir` 입니다.
+  `browser`, `discord`, `desktop`, `fenrir`, `huginn` 입니다.
 - `cli-tools` aspect가 `zoxide`를 포함한 CLI 사용자 도구 묶음을 담당합니다.
 - `editor` aspect는 NVF와 Zed를 함께 가져옵니다. Zed는 Home Manager로
   설정하며 사용자 설정과 keymap의 mutable 옵션을 켜고 `nix` 확장,
@@ -121,11 +122,9 @@ just gc
 
 - 시크릿은 `secrets/*.yaml`에 암호화해서 보관합니다.
 - `.sops.yaml`이 `secrets/.*\.yaml`에 대한 암호화 규칙을 강제합니다.
-- Home Manager는 `secrets` aspect로 `secrets/poby.yaml`에서 아래 항목을
-  읽습니다.
-  - `github_ssh_key`
-  - `github_cli_token`
-  - `kmeat_mac_mini_ssh_key`
+- Home Manager는 `secrets` aspect로 분리된 SOPS 파일을 읽습니다.
+  - `secrets/github.yaml`: `github_ssh_key`, `github_cli_token`
+  - `secrets/ssh.yaml`: `kmeat_mac_mini_ssh_key`
 
 ## 트러블슈팅
 
