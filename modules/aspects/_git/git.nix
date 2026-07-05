@@ -40,7 +40,7 @@ in {
     gco = "git checkout";
     gd = "git diff";
     gl = "git pull";
-    glg = "git log --stat";
+    glg = "git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --date=short";
     gp = "git push";
     gst = "git status";
   };
