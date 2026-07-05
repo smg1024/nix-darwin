@@ -5,6 +5,11 @@
     stylua
   ];
 
+  home.sessionVariables = {
+    EDITOR = "zed --wait";
+    VISUAL = "zed --wait";
+  };
+
   programs.zed-editor = {
     enable = true;
     package = null;
@@ -341,6 +346,7 @@
         font_family = "D2Coding";
         env = {
           EDITOR = "zed --wait";
+          VISUAL = "zed --wait";
         };
       };
       file_types = {
