@@ -19,7 +19,6 @@
         "obsidian"
         "rectangle"
         "slack"
-        "zed"
       ];
     };
   };
