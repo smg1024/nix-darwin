@@ -136,7 +136,7 @@ in {
 
       beszel = {
         title = "Beszel";
-        id = "03f8eb6f-2da9-41d8-b908-b0c3b66f43fd";
+        id = "834114ef-19ce-4291-8f2e-1e39fc02a4a7";
         url = "https://beszel.ridewithmin.com";
         workspace = spaces.developer.id;
         container = containers.personal.id;
