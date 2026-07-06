@@ -42,7 +42,7 @@
     mutableUserDebug = true;
 
     userSettings = {
-      ui_font_family = "D2CodingLigature Nerd Font Mono";
+      ui_font_family = "D2CodingLigature Nerd Font";
       colorize_brackets = true;
       toolbar = {
         code_actions = true;
@@ -92,8 +92,8 @@
       use_system_window_tabs = true;
       buffer_font_fallbacks = [
         "Menlo"
-        "MesloLGL Nerd Font Mono"
-        "JetBrainsMono Nerd Font Mono"
+        "MesloLGL Nerd Font"
+        "JetBrainsMono Nerd Font"
       ];
       show_whitespaces = "all";
       show_edit_predictions = true;
@@ -122,7 +122,7 @@
       file_finder = {
         modal_max_width = "medium";
       };
-      buffer_font_family = "D2CodingLigature Nerd Font Mono";
+      buffer_font_family = "D2CodingLigature Nerd Font";
       vim_mode = true;
       vim = {
         use_smartcase_find = true;
@@ -379,7 +379,7 @@
         shell = "system";
         show_count_badge = true;
         font_size = 15.0;
-        font_family = "D2CodingLigature Nerd Font Mono";
+        font_family = "D2CodingLigature Nerd Font";
         env = {
           EDITOR = "zed --wait";
           VISUAL = "zed --wait";
