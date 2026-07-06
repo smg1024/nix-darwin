@@ -134,10 +134,10 @@ in {
         position = 1460;
       };
 
-      grafana = {
-        title = "Grafana";
+      beszel = {
+        title = "Beszel";
         id = "03f8eb6f-2da9-41d8-b908-b0c3b66f43fd";
-        url = "https://grafana.ridewithmin.com";
+        url = "https://beszel.ridewithmin.com";
         workspace = spaces.developer.id;
         container = containers.personal.id;
         folderParentId = homelab-folder.id;
