@@ -18,8 +18,8 @@
   format = {
     enable = true;
     type = [
-      "prettierd"
-      "deno_fmt"
+      "prettier"
+      "deno"
     ];
   };
   lsp = {
