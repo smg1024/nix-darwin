@@ -3,6 +3,9 @@
     nixd
     alejandra
     stylua
+    prettier
+    typescript
+    mdx-language-server
   ];
 
   home.sessionVariables = {
@@ -26,6 +29,7 @@
       "just"
       "lua"
       "make"
+      "mdx"
       "nix"
       "sql"
       "svelte"
@@ -251,6 +255,18 @@
           format_on_save = "off";
           preferred_line_length = 80;
         };
+        MDX = {
+          language_servers = ["mdx-analyzer"];
+          formatter = {
+            external = {
+              command = "${pkgs.prettier}/bin/prettier";
+              arguments = ["--stdin-filepath" "{buffer_path}"];
+            };
+          };
+          format_on_save = "on";
+          preferred_line_length = 80;
+          tab_size = 2;
+        };
         JSON = {};
         JSONC = {};
         Nix = {
@@ -278,6 +294,26 @@
         };
       };
       lsp = {
+        mdx = {
+          initialization_options = {
+            typescript = {
+              enabled = true;
+              tsdk = "${pkgs.typescript}/lib/node_modules/typescript/lib";
+            };
+          };
+        };
+        mdx-analyzer = {
+          binary = {
+            path = "${pkgs.mdx-language-server}/bin/mdx-language-server";
+            arguments = ["--stdio"];
+          };
+          initialization_options = {
+            typescript = {
+              enabled = true;
+              tsdk = "${pkgs.typescript}/lib/node_modules/typescript/lib";
+            };
+          };
+        };
         rust-analyzer = {
           initialization_options = {
             inlayHints = {
