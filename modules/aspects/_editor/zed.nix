@@ -42,7 +42,7 @@
     mutableUserDebug = true;
 
     userSettings = {
-      ui_font_family = "D2Coding";
+      ui_font_family = "D2CodingLigature Nerd Font Mono";
       colorize_brackets = true;
       toolbar = {
         code_actions = true;
@@ -122,7 +122,7 @@
       file_finder = {
         modal_max_width = "medium";
       };
-      buffer_font_family = "D2Coding";
+      buffer_font_family = "D2CodingLigature Nerd Font Mono";
       vim_mode = true;
       vim = {
         use_smartcase_find = true;
@@ -379,7 +379,7 @@
         shell = "system";
         show_count_badge = true;
         font_size = 15.0;
-        font_family = "D2Coding";
+        font_family = "D2CodingLigature Nerd Font Mono";
         env = {
           EDITOR = "zed --wait";
           VISUAL = "zed --wait";
