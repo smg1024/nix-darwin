@@ -31,6 +31,7 @@
         "batfi"
         "claude-code@latest"
         "codex"
+        "codexbar"
         "finetune"
         "google-chrome"
         "hammerspoon"
