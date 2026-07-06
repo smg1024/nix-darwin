@@ -9,7 +9,7 @@
     enable = true;
     type = [
       "superhtml"
-      "prettier"
+      "prettierd"
     ];
   };
   lsp = {
