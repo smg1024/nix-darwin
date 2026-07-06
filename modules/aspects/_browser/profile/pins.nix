@@ -154,6 +154,16 @@ in {
         position = 1480;
       };
 
+      dev-with-min = {
+        title = "Dev with Min!";
+        id = "2427a9ef-3135-4086-829b-367899447eca";
+        url = "https://blog.ridewithmin.com";
+        workspace = spaces.developer.id;
+        container = containers.personal.id;
+        folderParentId = homelab-folder.id;
+        position = 1490;
+      };
+
       nix-folder = {
         title = "Nix";
         id = "1a16dcb7-aa4d-4c06-8efd-6719d9791483";
@@ -350,13 +360,22 @@ in {
         position = 3000;
       };
 
+      wavve = {
+        title = "Wavve";
+        id = "ea6ab730-4d96-4f6d-a721-81a0690a0bc1";
+        url = "https://www.wavve.com/";
+        workspace = spaces.playground.id;
+        container = containers.personal.id;
+        position = 3100;
+      };
+
       instagram = {
         title = "Instagram";
         id = "101d95d5-8326-4092-827b-160bd78a12ad";
         url = "https://www.instagram.com/";
         workspace = spaces.playground.id;
         container = containers.personal.id;
-        position = 3100;
+        position = 3200;
       };
 
       toeic = {
@@ -365,7 +384,7 @@ in {
         url = "https://exam.toeic.co.kr/";
         workspace = spaces.playground.id;
         container = containers.personal.id;
-        position = 3200;
+        position = 3300;
       };
 
       g-telp = {
@@ -374,7 +393,7 @@ in {
         url = "https://www.g-telp.co.kr:335/";
         workspace = spaces.playground.id;
         container = containers.personal.id;
-        position = 3300;
+        position = 3400;
       };
 
       beside-global = {
@@ -383,7 +402,7 @@ in {
         url = "https://beside-global.daouoffice.com/home";
         workspace = spaces.playground.id;
         container = containers.personal.id;
-        position = 3400;
+        position = 3500;
       };
     };
   };
