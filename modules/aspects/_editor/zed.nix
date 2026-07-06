@@ -222,7 +222,7 @@
           };
         };
         sandbox_permissions = {
-          allow_network = true;
+          allow_all_hosts = true;
           allow_unsandboxed = true;
           write_paths = ["/tmp/zed/sandbox"];
         };
@@ -294,14 +294,6 @@
         };
       };
       lsp = {
-        mdx = {
-          initialization_options = {
-            typescript = {
-              enabled = true;
-              tsdk = "${pkgs.typescript}/lib/node_modules/typescript/lib";
-            };
-          };
-        };
         mdx-analyzer = {
           binary = {
             path = "${pkgs.mdx-language-server}/bin/mdx-language-server";
