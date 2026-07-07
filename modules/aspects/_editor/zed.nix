@@ -346,7 +346,7 @@
         biome = {
           settings = {
             lineWidth = 100;
-            indentStyle = "tab";
+            indentStyle = "space";
             indentWidth = 2;
             organizeImports = {
               enabled = true;
