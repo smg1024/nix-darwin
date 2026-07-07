@@ -22,6 +22,9 @@
         KakaoTalk = 869223134;
         Across = 6444851827;
         Bitwarden = 1352778147;
+        Pages = 361309726;
+        Numbers = 361304891;
+        Keynote = 361285480;
       };
 
       brews = [];
