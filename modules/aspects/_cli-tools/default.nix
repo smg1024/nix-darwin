@@ -8,6 +8,7 @@
     ./fzf.nix
     ./jq.nix
     ./lazygit.nix
+    ./marp-cli.nix
     ./npm.nix
     ./ripgrep.nix
     ./uv.nix

@@ -3,7 +3,6 @@
     homebrew = {
       brews = [
         "docker"
-        "marp-cli"
       ];
 
       casks = [
