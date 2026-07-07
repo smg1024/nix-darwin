@@ -97,7 +97,8 @@ just gc
   `activation`, `fonts`, `sudo-auth`, `shell`, `cli-tools`, `git`, `ssh`,
   `secrets`, `terminal`, `hammerspoon`, `editor`, `browser`, `discord`,
   `desktop`, `fenrir`, and `huginn`.
-- The `cli-tools` aspect owns the CLI user tool set, including `zoxide`.
+- The `cli-tools` aspect owns the CLI user tool set, including `marp-cli` and
+  `zoxide`.
 - The `editor` aspect imports both NVF and Zed. Zed is configured through Home
   Manager with mutable user settings and keymaps enabled, the `nix` extension,
   `nixd` as the active Nix language server, and Alejandra as the Nix formatter.

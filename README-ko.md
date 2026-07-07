@@ -94,7 +94,8 @@ just gc
   `macos-defaults`, `activation`, `fonts`, `sudo-auth`, `shell`,
   `cli-tools`, `git`, `ssh`, `secrets`, `terminal`, `hammerspoon`, `editor`,
   `browser`, `discord`, `desktop`, `fenrir`, `huginn` 입니다.
-- `cli-tools` aspect가 `zoxide`를 포함한 CLI 사용자 도구 묶음을 담당합니다.
+- `cli-tools` aspect가 `marp-cli`와 `zoxide`를 포함한 CLI 사용자 도구 묶음을
+  담당합니다.
 - `editor` aspect는 NVF와 Zed를 함께 가져옵니다. Zed는 Home Manager로
   설정하며 사용자 설정과 keymap의 mutable 옵션을 켜고 `nix` 확장,
   Nix language server로 `nixd`, Nix formatter로 Alejandra를 사용합니다.
