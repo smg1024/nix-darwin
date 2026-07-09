@@ -20,7 +20,7 @@
     shellAliases = {
       nixconfig = "cd ~/nix-darwin && vim flake.nix";
       sshconfig = "cd ~/nix-darwin/modules/aspects/_ssh && vim ssh.nix";
-      just-darwin = "cd ~/nix-darwin && just darwin $(hostname)";
+      rebuild = "cd ~/nix-darwin && just switch $(hostname)";
     };
   };
 }
