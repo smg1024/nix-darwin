@@ -63,7 +63,7 @@ repl:
 # on darwin, you may need to switch to root user to run this command
 [group('nix')]
 clean:
-    sudo nh clean all --keep-since 7d
+    sudo nh clean all --keep-since 7d --keep-one
 
 [group('nix')]
 fmt range:
