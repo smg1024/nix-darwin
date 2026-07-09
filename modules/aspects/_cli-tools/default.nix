@@ -6,6 +6,8 @@
     ./eza.nix
     ./fd.nix
     ./fzf.nix
+    ./gradle.nix
+    ./java.nix
     ./jq.nix
     ./lazygit.nix
     ./marp-cli.nix

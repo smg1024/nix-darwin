@@ -6,6 +6,8 @@
     prettier
     typescript
     mdx-language-server
+    jdt-language-server
+    google-java-format
   ];
 
   home.sessionVariables = {
@@ -271,6 +273,21 @@
         };
         JSON = {};
         JSONC = {};
+        Java = {
+          enable_language_server = true;
+          language_servers = ["jdtls"];
+          formatter = {
+            external = {
+              command = "${pkgs.google-java-format}/bin/google-java-format";
+              arguments = [
+                "--assume-filename"
+                "{buffer_path}"
+                "-"
+              ];
+            };
+          };
+          format_on_save = "on";
+        };
         Nix = {
           language_servers = ["nixd" "!nil"];
           formatter = {
@@ -296,6 +313,12 @@
         };
       };
       lsp = {
+        jdtls = {
+          settings = {
+            java_home = "${pkgs.jdk25.home}";
+            lombok_support = true;
+          };
+        };
         mdx-analyzer = {
           binary = {
             path = "${pkgs.mdx-language-server}/bin/mdx-language-server";
@@ -610,6 +633,16 @@
           p = "project_panel::Paste";
           "space e" = "workspace::ToggleRightDock";
         };
+      }
+    ];
+
+    userDebug = [
+      {
+        adapter = "Java";
+        request = "launch";
+        label = "Launch Java";
+        cwd = "$ZED_WORKTREE_ROOT";
+        stopOnEntry = false;
       }
     ];
   };
