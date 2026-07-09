@@ -4,12 +4,13 @@
 
     environment = {
       systemPackages = with pkgs; [
-        git
-        neovim
-        just
-        sops
-        tree
         fastfetch-unwrapped
+        git
+        just
+        neovim
+        sops
+        nh
+        tree
       ];
     };
   };
