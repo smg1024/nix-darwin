@@ -10,25 +10,27 @@ default:
 #
 ############################################################################
 
-[group('desktop')]
+[group('darwin')]
 dry-run hostname:
     nix build .#darwinConfigurations.{{ hostname }}.system \
       --dry-run \
       --extra-experimental-features 'nix-command flakes'
 
-[group('desktop')]
-darwin hostname:
-    nix build .#darwinConfigurations.{{ hostname }}.system \
-      --extra-experimental-features 'nix-command flakes'
+[group('darwin')]
+switch hostname:
+    nh darwin switch . -H {{ hostname }}
 
-    sudo -E ./result/sw/bin/darwin-rebuild switch --flake .#{{ hostname }}
+[group('darwin')]
+update hostname input='':
+    @if [ -z "{{ input }}" ]; then \
+      nh darwin switch . -H {{ hostname }} --update; \
+    else \
+      nh darwin switch . -H {{ hostname }} --update-input {{ input }}; \
+    fi
 
-[group('desktop')]
-darwin-debug hostname:
-    nix build .#darwinConfigurations.{{ hostname }}.system --show-trace --verbose \
-      --extra-experimental-features 'nix-command flakes'
-
-    sudo -E ./result/sw/bin/darwin-rebuild switch --flake .#{{ hostname }} --show-trace --verbose
+[group('darwin')]
+debug hostname:
+    nh darwin switch . -H {{ hostname }} --show-trace -vv --print-build-logs --show-activation-logs
 
 ############################################################################
 #
@@ -57,20 +59,11 @@ history:
 repl:
     nix repl -f flake:nixpkgs
 
-# remove all generations older than 7 days
+# remove all generations older than 7 days and collect garbage
 # on darwin, you may need to switch to root user to run this command
 [group('nix')]
 clean:
-    sudo nix profile wipe-history --profile /nix/var/nix/profiles/system  --older-than 7d
-
-# Garbage collect all unused nix store entries
-[group('nix')]
-gc:
-    # garbage collect all unused nix store entries(system-wide)
-    sudo nix-collect-garbage --delete-older-than 7d
-    # garbage collect all unused nix store entries(for the user - home-manager)
-    # https://github.com/NixOS/nix/issues/8508
-    nix-collect-garbage --delete-older-than 7d
+    sudo nh clean all --keep-since 7d
 
 [group('nix')]
 fmt range:
