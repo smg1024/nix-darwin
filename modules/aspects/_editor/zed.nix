@@ -120,9 +120,9 @@
         light = "Catppuccin Latte";
         dark = "Catppuccin Macchiato";
       };
-      ui_font_size = 16.0;
+      ui_font_size = 17.0;
       buffer_font_size = 15.0;
-      agent_ui_font_size = 16.0;
+      agent_ui_font_size = 18.0;
       file_finder = {
         modal_max_width = "medium";
       };
@@ -395,7 +395,7 @@
       terminal = {
         shell = "system";
         show_count_badge = true;
-        font_size = 15.0;
+        font_size = 16.0;
         font_family = "D2CodingLigature Nerd Font";
         env = {
           EDITOR = "zed --wait";
