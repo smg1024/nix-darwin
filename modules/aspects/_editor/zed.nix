@@ -1,8 +1,16 @@
 {
+  config,
   inputs,
   pkgs,
   ...
-}: {
+}: let
+  zedEditor = ''"${config.home.homeDirectory}/Applications/Home Manager Apps/Zed Nightly.app/Contents/MacOS/cli" --wait'';
+in {
+  home.sessionVariables = {
+    EDITOR = zedEditor;
+    VISUAL = zedEditor;
+  };
+
   home.packages = with pkgs; [
     nixd
     alejandra
@@ -17,7 +25,7 @@
   programs.zed-editor = {
     enable = true;
     package = inputs.zed.packages.${pkgs.stdenv.hostPlatform.system}.default;
-    defaultEditor = true;
+    defaultEditor = false;
     extensions = [
       "astro"
       "biome"
@@ -398,8 +406,8 @@
         font_family = "D2CodingLigature Nerd Font";
         font_fallbacks = ["MesloLGL Nerd Font"];
         env = {
-          EDITOR = "zed --wait";
-          VISUAL = "zed --wait";
+          EDITOR = zedEditor;
+          VISUAL = zedEditor;
         };
       };
       file_types = {
