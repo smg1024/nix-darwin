@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: let
-  zedEditor = ''"${config.home.homeDirectory}/Applications/Home\ Manager\ Apps/Zed\ Nightly.app/Contents/MacOS/cli" --wait'';
+  zedEditor = ''${config.home.homeDirectory}/Applications/Home\ Manager\ Apps/Zed\ Nightly.app/Contents/MacOS/cli --wait'';
 in {
   home.sessionVariables = {
     EDITOR = zedEditor;
