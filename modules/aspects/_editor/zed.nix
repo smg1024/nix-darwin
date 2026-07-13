@@ -63,17 +63,19 @@
       agent_servers = {
         codex-acp = {
           default_config_options = {
+            model = "gpt-5.6-sol";
             reasoning_effort = "xhigh";
             mode = "agent-full-access";
-            fast-mode = "on";
+            fast-mode = true;
           };
           type = "registry";
         };
         claude-acp = {
           default_config_options = {
+            model = "default";
             effort = "xhigh";
-            model = "opus[1m]";
             mode = "auto";
+            fast = true;
           };
           type = "registry";
         };
