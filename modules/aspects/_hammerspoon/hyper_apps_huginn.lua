@@ -1,7 +1,7 @@
 return {
   a = "com.daymore.Across",
   b = "app.zen-browser.zen",
-  c = "dev.zed.Zed",
+  c = "dev.zed.Zed-Nightly",
   f = "com.apple.finder",
   k = "com.kakao.KakaoTalkMac",
   l = "ru.keepcoder.Telegram",

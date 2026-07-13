@@ -48,7 +48,6 @@
         "telegram"
         "thaw@beta"
         "utm"
-        "zed"
       ];
     };
   };

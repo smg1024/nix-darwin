@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   home.packages = with pkgs; [
     nixd
     alejandra
@@ -10,15 +14,10 @@
     google-java-format
   ];
 
-  home.sessionVariables = {
-    EDITOR = "zed --wait";
-    VISUAL = "zed --wait";
-  };
-
   programs.zed-editor = {
     enable = true;
-    package = null;
-    defaultEditor = false;
+    package = inputs.zed.packages.${pkgs.stdenv.hostPlatform.system}.default;
+    defaultEditor = true;
     extensions = [
       "astro"
       "biome"
@@ -46,7 +45,9 @@
     mutableUserDebug = true;
 
     userSettings = {
+      format_on_save = "on";
       ui_font_family = "D2CodingLigature Nerd Font";
+      ui_font_fallbacks = ["MesloLGL Nerd Font"];
       colorize_brackets = true;
       toolbar = {
         code_actions = true;
@@ -94,11 +95,6 @@
       cursor_shape = "bar";
       cursor_blink = true;
       use_system_window_tabs = true;
-      buffer_font_fallbacks = [
-        "Menlo"
-        "MesloLGL Nerd Font"
-        "JetBrainsMono Nerd Font"
-      ];
       show_whitespaces = "all";
       show_edit_predictions = true;
       git_panel = {
@@ -127,6 +123,7 @@
         modal_max_width = "medium";
       };
       buffer_font_family = "D2CodingLigature Nerd Font";
+      buffer_font_fallbacks = ["MesloLGL Nerd Font"];
       vim_mode = true;
       vim = {
         use_smartcase_find = true;
@@ -397,6 +394,7 @@
         show_count_badge = true;
         font_size = 16.0;
         font_family = "D2CodingLigature Nerd Font";
+        font_fallbacks = ["MesloLGL Nerd Font"];
         env = {
           EDITOR = "zed --wait";
           VISUAL = "zed --wait";

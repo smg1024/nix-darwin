@@ -30,8 +30,8 @@
       features = checkedFeatures;
     };
 
-    darwinModules = builtins.map (feature: config.flake.modules.darwin.${feature} or {}) checkedFeatures;
-    homeModules = builtins.map (feature: config.repo.homeModules.${feature} or {}) checkedFeatures;
+    darwinModules = map (feature: config.flake.modules.darwin.${feature} or {}) checkedFeatures;
+    homeModules = map (feature: config.repo.homeModules.${feature} or {}) checkedFeatures;
   in
     inputs.darwin.lib.darwinSystem {
       system = hostConfig.system;
@@ -54,6 +54,9 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               backupFileExtension = "backup";
+              extraSpecialArgs = {
+                inherit inputs;
+              };
               sharedModules = [
                 inputs.nvf.homeManagerModules.nvf
                 inputs.sops-nix.homeManagerModules.sops
