@@ -42,13 +42,13 @@ debug hostname:
 # Update all the flake inputs
 [group('nix')]
 up:
-    nix flake update
+    nix flake update --accept-flake-config
 
 # Update specific input
 # Usage: just upp nixpkgs
 [group('nix')]
 upp input:
-    nix flake update {{ input }}
+    nix flake update {{ input }} --accept-flake-config
 
 # List all generations of the system profile
 [group('nix')]
