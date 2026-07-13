@@ -45,6 +45,7 @@
     mutableUserDebug = true;
 
     userSettings = {
+      format_on_save = "on";
       ui_font_family = "D2CodingLigature Nerd Font";
       colorize_brackets = true;
       toolbar = {
