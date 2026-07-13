@@ -14,15 +14,10 @@
     google-java-format
   ];
 
-  home.sessionVariables = {
-    EDITOR = "zed --wait";
-    VISUAL = "zed --wait";
-  };
-
   programs.zed-editor = {
     enable = true;
-    package = inputs.zed.packages.${pkgs.system}.default;
-    defaultEditor = false;
+    package = inputs.zed.packages.${pkgs.stdenv.hostPlatform.system}.default;
+    defaultEditor = true;
     extensions = [
       "astro"
       "biome"
