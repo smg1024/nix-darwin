@@ -30,7 +30,6 @@
       brews = [];
 
       casks = [
-        "postmelee/tap/alhangeul"
         "batfi"
         "claude-code@latest"
         "codex"
@@ -41,6 +40,8 @@
         "iina"
         "keka"
         "kekaexternalhelper"
+        "logi-options+"
+        "postmelee/tap/alhangeul"
         "raycast"
         "shottr"
         "stats"

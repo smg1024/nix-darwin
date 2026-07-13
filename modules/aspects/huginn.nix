@@ -13,7 +13,6 @@
         "datagrip"
         "docker-desktop"
         "google-gemini"
-        "logi-options+"
         "notion"
         "obsidian"
         "rectangle"
