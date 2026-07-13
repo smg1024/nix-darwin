@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   home.packages = with pkgs; [
     nixd
     alejandra
@@ -17,7 +21,7 @@
 
   programs.zed-editor = {
     enable = true;
-    package = null;
+    package = inputs.zed.packages.${pkgs.system}.default;
     defaultEditor = false;
     extensions = [
       "astro"

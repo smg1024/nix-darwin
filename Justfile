@@ -14,23 +14,24 @@ default:
 dry-run hostname:
     nix build .#darwinConfigurations.{{ hostname }}.system \
       --dry-run \
+      --accept-flake-config \
       --extra-experimental-features 'nix-command flakes'
 
 [group('darwin')]
 switch hostname:
-    nh darwin switch . -H {{ hostname }}
+    nh darwin switch . -H {{ hostname }} --accept-flake-config
 
 [group('darwin')]
 update hostname input='':
     @if [ -z "{{ input }}" ]; then \
-      nh darwin switch . -H {{ hostname }} --update; \
+      nh darwin switch . -H {{ hostname }} --update --accept-flake-config; \
     else \
-      nh darwin switch . -H {{ hostname }} --update-input {{ input }}; \
+      nh darwin switch . -H {{ hostname }} --update-input {{ input }} --accept-flake-config; \
     fi
 
 [group('darwin')]
 debug hostname:
-    nh darwin switch . -H {{ hostname }} --show-trace -vv --print-build-logs --show-activation-logs
+    nh darwin switch . -H {{ hostname }} --accept-flake-config --show-trace -vv --print-build-logs --show-activation-logs
 
 ############################################################################
 #
