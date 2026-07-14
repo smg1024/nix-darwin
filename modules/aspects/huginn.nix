@@ -8,7 +8,6 @@
       casks = [
         "chatgpt"
         "claude"
-        "codex-app"
         "cursor"
         "datagrip"
         "docker-desktop"
