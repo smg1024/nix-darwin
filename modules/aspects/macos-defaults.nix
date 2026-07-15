@@ -18,7 +18,11 @@
 
         menuExtraClock = {
           Show24Hour = true;
+          ShowDayOfMonth = false;
           ShowDayOfWeek = false;
+          ShowSeconds = false;
+          FlashDateSeparators = false;
+          ShowDate = 1;
         };
 
         dock = {

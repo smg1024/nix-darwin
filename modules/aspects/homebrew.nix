@@ -27,7 +27,9 @@
         Keynote = 361285480;
       };
 
-      brews = [];
+      brews = [
+        "mole"
+      ];
 
       casks = [
         "batfi"
