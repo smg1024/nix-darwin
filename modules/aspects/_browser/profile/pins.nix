@@ -219,16 +219,16 @@ in {
       tradingview = {
         title = "TradingView";
         id = "b10e6f87-622e-43da-883c-d5d789f7423d";
-        url = "https://www.tradingview.com/chart/FGyFZdhQ/?symbol=DEEPCOIN:ETHUSDT.P";
+        url = "https://www.tradingview.com/chart/FGyFZdhQ/?symbol=OKX%3AETHUSDT.P";
         workspace = spaces.finance.id;
         container = containers.personal.id;
         position = 2000;
       };
 
-      deepcoin = {
-        title = "Deepcoin";
-        id = "d2217bc7-bdb9-4d37-9fc2-2c66fcb4195e";
-        url = "https://www.deepcoin.com/swap/en/ETHUSDT";
+      okx = {
+        title = "OKX";
+        id = "aada8b65-d9e8-4a73-8618-a3bb02261f21";
+        url = "https://www.okx.com/markets/prices";
         workspace = spaces.finance.id;
         container = containers.personal.id;
         position = 2100;

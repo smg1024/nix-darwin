@@ -8,7 +8,7 @@ in {
       gridType = "vsep";
       tabs = [
         pins.tradingview.id
-        pins.deepcoin.id
+        pins.okx.id
       ];
       sizes = [
         70

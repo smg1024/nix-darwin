@@ -7,7 +7,7 @@
     ./containers.nix
     ./spaces.nix
     ./pins.nix
-    ./joined-tabs.nix
+    # ./joined-tabs.nix
     ./mods.nix
   ];
 
