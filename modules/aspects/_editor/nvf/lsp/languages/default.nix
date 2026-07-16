@@ -8,6 +8,7 @@ let
   yaml = import ./yaml.nix;
   toml = import ./toml.nix;
   just = import ./just.nix;
+  java = import ./java.nix;
 in {
   inherit
     nix
@@ -19,5 +20,6 @@ in {
     yaml
     toml
     just
+    java
     ;
 }
