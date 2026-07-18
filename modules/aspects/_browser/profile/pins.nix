@@ -165,9 +165,9 @@ in {
       };
 
       jamye-plz = {
-        title = "Jamye Plz!";
+        title = "잼얘좀";
         id = "dcf784de-b56d-4327-b50f-ae14389cf3d7";
-        url = "https://jamye-plz.ridewithmin.com";
+        url = "https://jamye-plz.ridewithmin.com/groups";
         workspace = spaces.developer.id;
         container = containers.personal.id;
         folderParentId = homelab-folder.id;
