@@ -81,7 +81,7 @@ in {
         workspace = spaces.developer.id;
         container = containers.personal.id;
         folderParentId = homelab-folder.id;
-        position = 1410;
+        position = 1401;
       };
 
       cloudflare = {
@@ -91,7 +91,7 @@ in {
         workspace = spaces.developer.id;
         container = containers.personal.id;
         folderParentId = homelab-folder.id;
-        position = 1420;
+        position = 1402;
       };
 
       homepage = {
@@ -101,7 +101,7 @@ in {
         workspace = spaces.developer.id;
         container = containers.personal.id;
         folderParentId = homelab-folder.id;
-        position = 1430;
+        position = 1403;
       };
 
       git-with-min = {
@@ -111,7 +111,7 @@ in {
         workspace = spaces.developer.id;
         container = containers.personal.id;
         folderParentId = homelab-folder.id;
-        position = 1440;
+        position = 1404;
       };
 
       vaultwarden = {
@@ -121,7 +121,7 @@ in {
         workspace = spaces.developer.id;
         container = containers.personal.id;
         folderParentId = homelab-folder.id;
-        position = 1450;
+        position = 1405;
       };
 
       uptime = {
@@ -131,7 +131,7 @@ in {
         workspace = spaces.developer.id;
         container = containers.personal.id;
         folderParentId = homelab-folder.id;
-        position = 1460;
+        position = 1406;
       };
 
       beszel = {
@@ -141,7 +141,7 @@ in {
         workspace = spaces.developer.id;
         container = containers.personal.id;
         folderParentId = homelab-folder.id;
-        position = 1470;
+        position = 1407;
       };
 
       homelab-docs = {
@@ -151,7 +151,7 @@ in {
         workspace = spaces.developer.id;
         container = containers.personal.id;
         folderParentId = homelab-folder.id;
-        position = 1480;
+        position = 1408;
       };
 
       dev-with-min = {
@@ -161,7 +161,17 @@ in {
         workspace = spaces.developer.id;
         container = containers.personal.id;
         folderParentId = homelab-folder.id;
-        position = 1490;
+        position = 1409;
+      };
+
+      jamye-plz = {
+        title = "Jamye Plz!";
+        id = "dcf784de-b56d-4327-b50f-ae14389cf3d7";
+        url = "https://jamye-plz.ridewithmin.com";
+        workspace = spaces.developer.id;
+        container = containers.personal.id;
+        folderParentId = homelab-folder.id;
+        position = 1410;
       };
 
       nix-folder = {
