@@ -166,7 +166,7 @@ in {
 
       jamye-plz = {
         title = "잼얘좀";
-        id = "dcf784de-b56d-4327-b50f-ae14389cf3d7";
+        id = "66912253-de96-4218-a757-98462ab09628";
         url = "https://jamye-plz.ridewithmin.com/groups";
         workspace = spaces.developer.id;
         container = containers.personal.id;
