@@ -322,6 +322,10 @@ in {
           language_servers = ["!biome" "..."];
           formatter = "prettier";
         };
+        Astro = {
+          language_servers = ["!biome" "..."];
+          formatter = "prettier";
+        };
       };
       lsp = {
         jdtls = {
