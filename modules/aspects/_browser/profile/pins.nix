@@ -36,8 +36,8 @@ in {
       };
 
       gemini = {
-        title = "Gemini";
-        id = "06f6d673-f21e-42aa-97ac-9b3abd8b655d";
+        title = "Google Gemini";
+        id = "6fe5f09f-624e-43af-9f07-a3fe3989319b";
         url = "https://gemini.google.com/u/1/app";
         workspace = spaces.developer.id;
         container = containers.personal.id;
@@ -155,8 +155,8 @@ in {
       };
 
       dev-with-min = {
-        title = "Dev with Min!";
-        id = "2427a9ef-3135-4086-829b-367899447eca";
+        title = "Dev with Min";
+        id = "198aeb98-4fcc-4d5d-9a99-9635087c1aea";
         url = "https://blog.ridewithmin.com";
         workspace = spaces.developer.id;
         container = containers.personal.id;
@@ -217,8 +217,8 @@ in {
       };
 
       nix-ee = {
-        title = "Nix.ee";
-        id = "90f44734-3a83-42d9-9e54-35dc645ff126";
+        title = "Searchix";
+        id = "b5dbc6b7-d86e-4d1c-8262-433bf678b2cc";
         url = "https://search.nix.ee/";
         workspace = spaces.developer.id;
         container = containers.personal.id;
@@ -228,7 +228,7 @@ in {
 
       tradingview = {
         title = "TradingView";
-        id = "b10e6f87-622e-43da-883c-d5d789f7423d";
+        id = "386b2c86-c3cf-4659-9f9e-ecf63fb1fec7";
         url = "https://www.tradingview.com/chart/FGyFZdhQ/?symbol=OKX%3AETHUSDT.P";
         workspace = spaces.finance.id;
         container = containers.personal.id;
@@ -245,8 +245,8 @@ in {
       };
 
       tossinvest = {
-        title = "TossInvest";
-        id = "f11b2c97-8867-4e95-9a17-e5fc8cdc8dfe";
+        title = "토스증권";
+        id = "c1447c1b-00b3-4078-b430-0e4262f9fd70";
         url = "https://www.tossinvest.com/";
         workspace = spaces.finance.id;
         container = containers.personal.id;
@@ -284,8 +284,8 @@ in {
       };
 
       naver-real-estate = {
-        title = "네이버 부동산";
-        id = "e75f7f72-4135-4bc5-ab39-f9f04f0995b2";
+        title = "Npay 부동산";
+        id = "8fa11177-59f7-48f4-8eff-a874fd3c528f";
         url = "https://fin.land.naver.com/map";
         workspace = spaces.finance.id;
         container = containers.personal.id;
@@ -324,8 +324,8 @@ in {
       };
 
       ayoung-home = {
-        title = "아영이네 홈페이지";
-        id = "1490d3c1-18e7-4cce-940d-e8fb3602f3de";
+        title = "아영이네 행복주택";
+        id = "e3ca858e-06a0-4b8d-83f4-62c3ef7f9ace";
         url = "https://www.ayounghome.com/";
         workspace = spaces.finance.id;
         container = containers.personal.id;
@@ -362,8 +362,8 @@ in {
       };
 
       tving = {
-        title = "TVing";
-        id = "8134b0da-a809-465d-a0d6-940cb01759a2";
+        title = "TVING";
+        id = "93656f73-34e3-4641-b8a2-b6178bf3163f";
         url = "https://www.tving.com/";
         workspace = spaces.playground.id;
         container = containers.personal.id;
@@ -371,8 +371,8 @@ in {
       };
 
       wavve = {
-        title = "Wavve";
-        id = "ea6ab730-4d96-4f6d-a721-81a0690a0bc1";
+        title = "Wavve(웨이브)";
+        id = "dc9d80f0-96ee-4388-b854-277fc7cca3fa";
         url = "https://www.wavve.com/";
         workspace = spaces.playground.id;
         container = containers.personal.id;
@@ -389,8 +389,8 @@ in {
       };
 
       toeic = {
-        title = "TOEIC";
-        id = "796088ee-5021-44d8-ad5b-d84ceae3bb80";
+        title = "TOEIC® 공식 사이트";
+        id = "0b0b2e7c-0b05-418f-844f-f300398bffcd";
         url = "https://exam.toeic.co.kr/";
         workspace = spaces.playground.id;
         container = containers.personal.id;

@@ -32,6 +32,7 @@
       ];
 
       casks = [
+        "atoll"
         "batfi"
         "claude-code@latest"
         "codex"
