@@ -1,7 +1,7 @@
 # Secrets
 
-This directory stores SOPS-encrypted secrets used by the `secrets` Home Manager
-aspect. Do not commit plaintext secrets.
+This directory contains the SOPS-encrypted secrets used by the `secrets` Home
+Manager aspect. Never commit plaintext secrets.
 
 ## Current setup
 
@@ -10,10 +10,10 @@ aspect. Do not commit plaintext secrets.
   - `secrets/ssh.yaml`: non-GitHub SSH private keys
 - SOPS rules: `.sops.yaml`
 - Age key file: `~/.config/sops/age/keys.txt`
-- Environment variable: `SOPS_AGE_KEY_FILE`, exported by the `secrets` aspect
-- SOPS CLI: installed by the system packages aspect
+- Environment variable: the `secrets` aspect exports `SOPS_AGE_KEY_FILE`
+- SOPS CLI: the system packages aspect installs it
 - Secret declarations: `modules/aspects/_secrets/sops.nix`
-- SSH host wiring: `modules/aspects/_ssh/ssh.nix`
+- SSH host configuration: `modules/aspects/_ssh/ssh.nix`
 - Declared secret names:
   - `github_ssh_key`
   - `github_cli_token`
@@ -27,11 +27,11 @@ From the repository root, open the encrypted secret file:
 sops secrets/ssh.yaml
 ```
 
-After Home Manager has applied the `secrets` aspect, it exports
-`SOPS_AGE_KEY_FILE` so SOPS uses `~/.config/sops/age/keys.txt` by default.
+After Home Manager applies the `secrets` aspect, it exports
+`SOPS_AGE_KEY_FILE`. SOPS then uses `~/.config/sops/age/keys.txt` by default.
 
-Add a top-level key name and paste the private key as a YAML block scalar. The
-key name should match the Nix declaration you will add later.
+Add a top-level key and paste the private key as a YAML block scalar. Use the
+same key name in the Nix declaration you add later.
 
 ```yaml
 workstation_ssh_key: |
@@ -40,19 +40,17 @@ workstation_ssh_key: |
   -----END OPENSSH PRIVATE KEY-----
 ```
 
-Save and quit the editor. SOPS will re-encrypt the file automatically.
+Save and quit the editor. SOPS re-encrypts the file automatically.
 
-Do not edit the `sops:` metadata block manually.
+Do not edit the `sops:` metadata block.
 
-If SOPS cannot find the age key automatically, set the key file explicitly for
-the command:
+If SOPS cannot find the age key, pass the key file explicitly:
 
 ```bash
 SOPS_AGE_KEY_FILE="$HOME/.config/sops/age/keys.txt" sops secrets/ssh.yaml
 ```
 
-If the system package set has not been applied yet, run the command from a
-temporary shell with `sops`:
+Before the system package set is active, open a temporary shell with `sops`:
 
 ```bash
 nix-shell -p sops --run 'sops secrets/ssh.yaml'
@@ -60,22 +58,22 @@ nix-shell -p sops --run 'sops secrets/ssh.yaml'
 
 ## Generate a new SSH key first
 
-If the key does not exist yet, generate it before opening SOPS:
+If you do not have a key yet, generate one before opening SOPS:
 
 ```bash
 ssh-keygen -t ed25519 -f ~/.ssh/workstation_ssh_key -C "workstation"
 ```
 
-Register the public key wherever the remote service expects it:
+Register the public key with the remote service:
 
 ```bash
 cat ~/.ssh/workstation_ssh_key.pub
 ```
 
-Then copy the private key contents into `secrets/ssh.yaml` with SOPS.
+Then copy the private key into `secrets/ssh.yaml` with SOPS.
 
-After the private key is stored in SOPS and deployed through `sops-nix`, remove
-any temporary plaintext private key if it is no longer needed outside this repo.
+Once `sops-nix` deploys the key from SOPS, remove the temporary plaintext copy
+if nothing else needs it.
 
 ## Declare the secret in Nix
 
@@ -98,29 +96,28 @@ secrets = {
 };
 ```
 
-The `secrets` aspect reads `repo.user.secretFiles`, which defaults to
-`secrets/github.yaml` and `secrets/ssh.yaml` in `modules/flake/options.nix`.
-GitHub-specific credentials should use `secretFiles.github`; SSH keys for hosts
-or services should use `secretFiles.ssh`.
+The `secrets` aspect reads `repo.user.secretFiles`. Its defaults are
+`secrets/github.yaml` and `secrets/ssh.yaml`, as defined in
+`modules/flake/options.nix`. Store GitHub credentials in `secretFiles.github`
+and other SSH keys in `secretFiles.ssh`.
 
 ## Use the secret for SSH
 
-Reference the SOPS-managed secret path from the matching SSH host block in
+Add the SOPS-managed secret path to the matching host entry in
 `modules/aspects/_ssh/ssh.nix`:
 
 ```nix
 "workstation-host" = {
-  hostname = "example.com";
-  user = "example";
-  identitiesOnly = true;
-  identityFile = [config.sops.secrets."workstation_ssh_key".path];
+  Hostname = "example.com";
+  User = "example";
+  IdentitiesOnly = true;
+  IdentityFile = [config.sops.secrets."workstation_ssh_key".path];
 };
 ```
 
 ## Verify
 
-Confirm the encrypted files contain the expected top-level secret names without
-printing secret values:
+List the top-level secret names without printing their values:
 
 ```bash
 for file in secrets/github.yaml secrets/ssh.yaml; do
@@ -129,18 +126,21 @@ for file in secrets/github.yaml secrets/ssh.yaml; do
 done
 ```
 
-Confirm no plaintext private key was written into the encrypted file:
+Check that the encrypted files do not contain a plaintext private key:
 
 ```bash
 rg -n "BEGIN OPENSSH PRIVATE KEY|END OPENSSH PRIVATE KEY" secrets/*.yaml
 ```
 
-Expected result: no output.
+The command should print nothing.
 
-Check that every secret referenced by SSH is declared in SOPS before switching:
+Compare the SSH references with the declared SOPS secrets:
 
 ```bash
-rg 'config\.sops\.secrets' modules/aspects/_ssh/ssh.nix
+rg -o 'config\.sops\.secrets\."[^"]+"' \
+  modules/aspects/_ssh/ssh.nix | sort -u
+rg -o '"[A-Za-z0-9_]+" = \{' \
+  modules/aspects/_secrets/sops.nix | sort -u
 ```
 
 Evaluate the Darwin configuration:
@@ -148,13 +148,14 @@ Evaluate the Darwin configuration:
 ```bash
 nix build .#darwinConfigurations.fenrir.system \
   --dry-run \
+  --accept-flake-config \
   --extra-experimental-features 'nix-command flakes'
 ```
 
 Build and switch:
 
 ```bash
-just darwin fenrir
+just switch fenrir
 ```
 
 Test the SSH alias:
@@ -163,4 +164,4 @@ Test the SSH alias:
 ssh -o BatchMode=yes workstation-host true
 ```
 
-No output means the SSH command succeeded.
+Successful authentication produces no output.
