@@ -9,6 +9,9 @@ let
   toml = import ./toml.nix;
   just = import ./just.nix;
   java = import ./java.nix;
+  typescript = import ./typescript.nix;
+  tsx = import ./tsx.nix;
+  json = import ./json.nix;
 in {
   inherit
     nix
@@ -21,5 +24,8 @@ in {
     toml
     just
     java
+    typescript
+    tsx
+    json
     ;
 }

@@ -1,16 +1,16 @@
 {
-  # toml
+  # tsx
   enable = true;
   extraDiagnostics = {
     enable = true;
   };
-  lsp = {
-    enable = true;
-    servers = ["taplo"];
-  };
   format = {
     enable = true;
-    type = ["taplo"];
+    type = ["prettier"];
+  };
+  lsp = {
+    enable = true;
+    servers = ["typescript-language-server"];
   };
   treesitter.enable = true;
 }
