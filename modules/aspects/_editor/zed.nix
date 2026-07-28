@@ -20,6 +20,7 @@ in {
     mdx-language-server
     jdt-language-server
     google-java-format
+    taplo
   ];
 
   programs.zed-editor = {
@@ -28,7 +29,6 @@ in {
     defaultEditor = false;
     extensions = [
       "astro"
-      "biome"
       "catppuccin"
       "catppuccin-icons"
       "dockerfile"
@@ -45,6 +45,7 @@ in {
       "sql"
       "svelte"
       "toml"
+      "tombi"
     ];
 
     mutableUserSettings = true;
@@ -325,6 +326,16 @@ in {
         Astro = {
           language_servers = ["!biome" "..."];
           formatter = "prettier";
+        };
+        TOML = {
+          language_servers = ["taplo"];
+          format_on_save = "on";
+          formatter = {
+            external = {
+              command = "${pkgs.taplo}/bin/taplo";
+              arguments = ["fmt" "--option" "align_entries=true" "-"];
+            };
+          };
         };
       };
       lsp = {
