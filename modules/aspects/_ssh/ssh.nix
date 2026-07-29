@@ -10,13 +10,6 @@
         IdentitiesOnly = true;
         IdentityFile = [config.sops.secrets."github_ssh_key".path];
       };
-      "Valkyrie-Ubuntu_Server" = {
-        Hostname = "192.168.64.2";
-        User = "poby";
-        Port = 22;
-        IdentitiesOnly = true;
-        IdentityFile = [config.sops.secrets."github_ssh_key".path];
-      };
       "kmeat-mac-mini" = {
         Hostname = "ai.kmeat.com";
         User = "kmeat";
