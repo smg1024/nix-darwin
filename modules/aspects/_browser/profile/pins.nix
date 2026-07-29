@@ -353,7 +353,7 @@ in {
       };
 
       coupangplay = {
-        title = "Coupang Play";
+        title = "쿠팡플레이";
         id = "b4f99e8f-3c56-4197-bb26-f883555c8bf7";
         url = "https://www.coupangplay.com/home";
         workspace = spaces.playground.id;
