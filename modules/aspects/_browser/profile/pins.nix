@@ -35,22 +35,13 @@ in {
         position = 1000;
       };
 
-      gemini = {
-        title = "Google Gemini";
-        id = "6fe5f09f-624e-43af-9f07-a3fe3989319b";
-        url = "https://gemini.google.com/u/1/app";
-        workspace = spaces.developer.id;
-        container = containers.personal.id;
-        position = 1100;
-      };
-
       notion = {
         title = "Notion";
         id = "534eed63-5da2-4806-837a-8a2f5cf7a263";
         url = "https://app.notion.com/";
         workspace = spaces.developer.id;
         container = containers.personal.id;
-        position = 1200;
+        position = 1100;
       };
 
       aws-console = {
@@ -59,7 +50,7 @@ in {
         url = "https://console.aws.amazon.com/console/home/";
         workspace = spaces.developer.id;
         container = containers.personal.id;
-        position = 1300;
+        position = 1200;
       };
 
       homelab-folder = {
@@ -67,7 +58,7 @@ in {
         id = "6c3e6aa6-6e5e-4226-8d21-23de209246af";
         workspace = spaces.developer.id;
         container = containers.personal.id;
-        position = 1400;
+        position = 1300;
         isGroup = true;
         editedTitle = true;
         isFolderCollapsed = false;
@@ -81,7 +72,7 @@ in {
         workspace = spaces.developer.id;
         container = containers.personal.id;
         folderParentId = homelab-folder.id;
-        position = 1401;
+        position = 1301;
       };
 
       cloudflare = {
@@ -91,7 +82,7 @@ in {
         workspace = spaces.developer.id;
         container = containers.personal.id;
         folderParentId = homelab-folder.id;
-        position = 1402;
+        position = 1302;
       };
 
       homepage = {
@@ -101,7 +92,7 @@ in {
         workspace = spaces.developer.id;
         container = containers.personal.id;
         folderParentId = homelab-folder.id;
-        position = 1403;
+        position = 1303;
       };
 
       git-with-min = {
@@ -111,7 +102,7 @@ in {
         workspace = spaces.developer.id;
         container = containers.personal.id;
         folderParentId = homelab-folder.id;
-        position = 1404;
+        position = 1304;
       };
 
       vaultwarden = {
@@ -121,7 +112,7 @@ in {
         workspace = spaces.developer.id;
         container = containers.personal.id;
         folderParentId = homelab-folder.id;
-        position = 1405;
+        position = 1305;
       };
 
       uptime = {
@@ -131,7 +122,7 @@ in {
         workspace = spaces.developer.id;
         container = containers.personal.id;
         folderParentId = homelab-folder.id;
-        position = 1406;
+        position = 1306;
       };
 
       beszel = {
@@ -141,7 +132,7 @@ in {
         workspace = spaces.developer.id;
         container = containers.personal.id;
         folderParentId = homelab-folder.id;
-        position = 1407;
+        position = 1307;
       };
 
       homelab-docs = {
@@ -151,7 +142,7 @@ in {
         workspace = spaces.developer.id;
         container = containers.personal.id;
         folderParentId = homelab-folder.id;
-        position = 1408;
+        position = 1308;
       };
 
       dev-with-min = {
@@ -161,7 +152,7 @@ in {
         workspace = spaces.developer.id;
         container = containers.personal.id;
         folderParentId = homelab-folder.id;
-        position = 1409;
+        position = 1309;
       };
 
       jamye-plz = {
@@ -171,7 +162,7 @@ in {
         workspace = spaces.developer.id;
         container = containers.personal.id;
         folderParentId = homelab-folder.id;
-        position = 1410;
+        position = 1310;
       };
 
       nix-folder = {
@@ -179,7 +170,7 @@ in {
         id = "1a16dcb7-aa4d-4c06-8efd-6719d9791483";
         workspace = spaces.developer.id;
         container = containers.personal.id;
-        position = 1500;
+        position = 1400;
         isGroup = true;
         editedTitle = true;
         isFolderCollapsed = false;
@@ -193,7 +184,7 @@ in {
         workspace = spaces.developer.id;
         container = containers.personal.id;
         folderParentId = nix-folder.id;
-        position = 1510;
+        position = 1401;
       };
 
       home-manager-search = {
@@ -203,7 +194,7 @@ in {
         workspace = spaces.developer.id;
         container = containers.personal.id;
         folderParentId = nix-folder.id;
-        position = 1520;
+        position = 1402;
       };
 
       nix-dev = {
@@ -213,7 +204,7 @@ in {
         workspace = spaces.developer.id;
         container = containers.personal.id;
         folderParentId = nix-folder.id;
-        position = 1530;
+        position = 1403;
       };
 
       nix-ee = {
@@ -223,13 +214,13 @@ in {
         workspace = spaces.developer.id;
         container = containers.personal.id;
         folderParentId = nix-folder.id;
-        position = 1540;
+        position = 1404;
       };
 
-      tradingview = {
-        title = "TradingView";
-        id = "386b2c86-c3cf-4659-9f9e-ecf63fb1fec7";
-        url = "https://www.tradingview.com/chart/FGyFZdhQ/?symbol=OKX%3AETHUSDT.P";
+      tossinvest = {
+        title = "토스증권";
+        id = "c1447c1b-00b3-4078-b430-0e4262f9fd70";
+        url = "https://www.tossinvest.com/";
         workspace = spaces.finance.id;
         container = containers.personal.id;
         position = 2000;
@@ -244,22 +235,13 @@ in {
         position = 2100;
       };
 
-      tossinvest = {
-        title = "토스증권";
-        id = "c1447c1b-00b3-4078-b430-0e4262f9fd70";
-        url = "https://www.tossinvest.com/";
-        workspace = spaces.finance.id;
-        container = containers.personal.id;
-        position = 2200;
-      };
-
       bithumb = {
         title = "Bithumb";
         id = "dba959d9-d1d1-40c0-bbae-72d6c0fe63d4";
         url = "https://www.bithumb.com/react/trade/order/ETH-KRW";
         workspace = spaces.finance.id;
         container = containers.personal.id;
-        position = 2300;
+        position = 2200;
       };
 
       investing-dot-com = {
@@ -268,7 +250,7 @@ in {
         url = "https://www.investing.com";
         workspace = spaces.finance.id;
         container = containers.personal.id;
-        position = 2400;
+        position = 2300;
       };
 
       real-estate-folder = {
@@ -276,7 +258,7 @@ in {
         id = "ef2c4075-24a9-4b90-b4d7-4bc5ad0f6a9b";
         workspace = spaces.finance.id;
         container = containers.personal.id;
-        position = 2500;
+        position = 2400;
         isGroup = true;
         editedTitle = true;
         isFolderCollapsed = false;
@@ -290,7 +272,7 @@ in {
         workspace = spaces.finance.id;
         container = containers.personal.id;
         folderParentId = real-estate-folder.id;
-        position = 2510;
+        position = 2401;
       };
 
       lh-apply = {
@@ -300,7 +282,7 @@ in {
         workspace = spaces.finance.id;
         container = containers.personal.id;
         folderParentId = real-estate-folder.id;
-        position = 2520;
+        position = 2402;
       };
 
       sh-apply = {
@@ -310,7 +292,7 @@ in {
         workspace = spaces.finance.id;
         container = containers.personal.id;
         folderParentId = real-estate-folder.id;
-        position = 2530;
+        position = 2403;
       };
 
       applyhome = {
@@ -320,7 +302,7 @@ in {
         workspace = spaces.finance.id;
         container = containers.personal.id;
         folderParentId = real-estate-folder.id;
-        position = 2540;
+        position = 2404;
       };
 
       ayoung-home = {
@@ -330,7 +312,7 @@ in {
         workspace = spaces.finance.id;
         container = containers.personal.id;
         folderParentId = real-estate-folder.id;
-        position = 2550;
+        position = 2405;
       };
 
       ayoung-cafe = {
@@ -340,7 +322,7 @@ in {
         workspace = spaces.finance.id;
         container = containers.personal.id;
         folderParentId = real-estate-folder.id;
-        position = 2560;
+        position = 2406;
       };
 
       gov24 = {
@@ -349,7 +331,7 @@ in {
         url = "https://plus.gov.kr/";
         workspace = spaces.finance.id;
         container = containers.personal.id;
-        position = 2600;
+        position = 2500;
       };
 
       hometax = {
@@ -358,7 +340,7 @@ in {
         url = "https://hometax.go.kr/websquare/websquare.html?w2xPath=/ui/pp/index_pp.xml&menuCd=index3";
         workspace = spaces.finance.id;
         container = containers.personal.id;
-        position = 2700;
+        position = 2600;
       };
 
       tving = {
@@ -370,13 +352,22 @@ in {
         position = 3000;
       };
 
+      coupangplay = {
+        title = "Coupang Play";
+        id = "b4f99e8f-3c56-4197-bb26-f883555c8bf7";
+        url = "https://www.coupangplay.com/home";
+        workspace = spaces.playground.id;
+        container = containers.personal.id;
+        position = 3100;
+      };
+
       wavve = {
         title = "Wavve(웨이브)";
         id = "dc9d80f0-96ee-4388-b854-277fc7cca3fa";
         url = "https://www.wavve.com/";
         workspace = spaces.playground.id;
         container = containers.personal.id;
-        position = 3100;
+        position = 3200;
       };
 
       instagram = {
@@ -385,7 +376,7 @@ in {
         url = "https://www.instagram.com/";
         workspace = spaces.playground.id;
         container = containers.personal.id;
-        position = 3200;
+        position = 3300;
       };
 
       toeic = {
@@ -394,7 +385,7 @@ in {
         url = "https://exam.toeic.co.kr/";
         workspace = spaces.playground.id;
         container = containers.personal.id;
-        position = 3300;
+        position = 3400;
       };
 
       g-telp = {
@@ -403,7 +394,7 @@ in {
         url = "https://www.g-telp.co.kr:335/";
         workspace = spaces.playground.id;
         container = containers.personal.id;
-        position = 3400;
+        position = 3500;
       };
 
       beside-global = {
@@ -412,7 +403,7 @@ in {
         url = "https://beside-global.daouoffice.com/home";
         workspace = spaces.playground.id;
         container = containers.personal.id;
-        position = 3500;
+        position = 3600;
       };
     };
   };

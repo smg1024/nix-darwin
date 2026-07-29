@@ -11,7 +11,6 @@
         "cursor"
         "datagrip"
         "docker-desktop"
-        "google-gemini"
         "notion"
         "obsidian"
         "rectangle"
