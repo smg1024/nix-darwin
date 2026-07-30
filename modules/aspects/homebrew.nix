@@ -34,6 +34,8 @@
       casks = [
         "atoll"
         "batfi"
+        "chatgpt"
+        "claude"
         "claude-code@latest"
         "codex"
         "codexbar"

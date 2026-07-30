@@ -6,8 +6,6 @@
       ];
 
       casks = [
-        "chatgpt"
-        "claude"
         "cursor"
         "datagrip"
         "docker-desktop"
