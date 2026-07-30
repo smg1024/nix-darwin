@@ -173,14 +173,14 @@ in {
         default_model = {
           speed = "fast";
           provider = "openai-subscribed";
-          model = "gpt-5.5";
+          model = "gpt-5.6-sol";
           enable_thinking = true;
           effort = "xhigh";
         };
         favorite_models = [
           {
             provider = "openai-subscribed";
-            model = "gpt-5.5";
+            model = "gpt-5.6-sol";
             enable_thinking = true;
             effort = "xhigh";
             speed = "fast";
@@ -191,7 +191,7 @@ in {
         dock = "left";
         inline_assistant_model = {
           provider = "openai-subscribed";
-          model = "gpt-5.5";
+          model = "gpt-5.6-sol";
         };
         notify_when_agent_waiting = "primary_screen";
         play_sound_when_agent_done = "never";
