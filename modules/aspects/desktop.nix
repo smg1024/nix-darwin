@@ -107,6 +107,8 @@ in {
           (workspaceRule "app.zen-browser.zen" "2")
           (workspaceRule "com.thebrowser.Browser" "2")
           (workspaceRule "com.google.Chrome" "2")
+          (workspaceRule "com.anthropic.claudefordesktop" "3")
+          (workspaceRule "com.openai.codex" "3")
           (workspaceRule "com.daymore.Across" "6")
           (workspaceRule "com.bitwarden.desktop" "6")
           (workspaceRule "com.apple.mail" "7")
