@@ -29,6 +29,7 @@ in {
     defaultEditor = false;
     extensions = [
       "astro"
+      "caddyfile"
       "catppuccin"
       "catppuccin-icons"
       "dockerfile"
@@ -44,8 +45,8 @@ in {
       "nix"
       "sql"
       "svelte"
-      "toml"
       "tombi"
+      "toml"
     ];
 
     mutableUserSettings = true;
