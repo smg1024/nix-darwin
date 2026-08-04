@@ -25,6 +25,8 @@ in {
       enable = true;
       launchd.enable = true;
       settings = {
+        config-version = 2;
+        persistent-workspaces = ["1" "2" "3" "4" "5" "6" "7" "8" "9"];
         start-at-login = true;
         accordion-padding = 10;
         default-root-container-layout = "tiles";
