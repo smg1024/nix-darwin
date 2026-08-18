@@ -3,9 +3,9 @@
     programs.ssh = {
       settings = {
         "kmeat-ai-workstation" = {
-          Hostname = "192.9.1.40";
+          Hostname = "ai.kmeat.com";
           User = "kmeatai";
-          Port = 10222;
+          Port = 10322;
           IdentitiesOnly = true;
           IdentityFile = [config.sops.secrets."github_ssh_key".path];
         };
