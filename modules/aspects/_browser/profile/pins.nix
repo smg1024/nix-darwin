@@ -44,21 +44,12 @@ in {
         position = 1100;
       };
 
-      aws-console = {
-        title = "AWS Console";
-        id = "50e1088b-d981-4868-92b8-e9d4581fba0a";
-        url = "https://console.aws.amazon.com/console/home/";
-        workspace = spaces.developer.id;
-        container = containers.personal.id;
-        position = 1200;
-      };
-
       homelab-folder = {
         title = "Homelab";
         id = "6c3e6aa6-6e5e-4226-8d21-23de209246af";
         workspace = spaces.developer.id;
         container = containers.personal.id;
-        position = 1300;
+        position = 1200;
         isGroup = true;
         editedTitle = true;
         isFolderCollapsed = false;
@@ -72,7 +63,7 @@ in {
         workspace = spaces.developer.id;
         container = containers.personal.id;
         folderParentId = homelab-folder.id;
-        position = 1301;
+        position = 1201;
       };
 
       cloudflare = {
@@ -82,7 +73,7 @@ in {
         workspace = spaces.developer.id;
         container = containers.personal.id;
         folderParentId = homelab-folder.id;
-        position = 1302;
+        position = 1202;
       };
 
       homepage = {
@@ -92,7 +83,7 @@ in {
         workspace = spaces.developer.id;
         container = containers.personal.id;
         folderParentId = homelab-folder.id;
-        position = 1303;
+        position = 1203;
       };
 
       git-with-min = {
@@ -102,7 +93,7 @@ in {
         workspace = spaces.developer.id;
         container = containers.personal.id;
         folderParentId = homelab-folder.id;
-        position = 1304;
+        position = 1204;
       };
 
       vaultwarden = {
@@ -112,7 +103,7 @@ in {
         workspace = spaces.developer.id;
         container = containers.personal.id;
         folderParentId = homelab-folder.id;
-        position = 1305;
+        position = 1205;
       };
 
       uptime = {
@@ -122,7 +113,7 @@ in {
         workspace = spaces.developer.id;
         container = containers.personal.id;
         folderParentId = homelab-folder.id;
-        position = 1306;
+        position = 1206;
       };
 
       beszel = {
@@ -132,7 +123,17 @@ in {
         workspace = spaces.developer.id;
         container = containers.personal.id;
         folderParentId = homelab-folder.id;
-        position = 1307;
+        position = 1207;
+      };
+
+      adguardhome = {
+        title = "AdGuard Home";
+        id = "602d1884-d045-4dfb-8b7c-2b2b3e2b6e37";
+        url = "https://adguardhome.ridewithmin.com";
+        workspace = spaces.developer.id;
+        container = containers.personal.id;
+        folderParentId = homelab-folder.id;
+        position = 1208;
       };
 
       homelab-docs = {
@@ -142,7 +143,7 @@ in {
         workspace = spaces.developer.id;
         container = containers.personal.id;
         folderParentId = homelab-folder.id;
-        position = 1308;
+        position = 1209;
       };
 
       dev-with-min = {
@@ -152,7 +153,7 @@ in {
         workspace = spaces.developer.id;
         container = containers.personal.id;
         folderParentId = homelab-folder.id;
-        position = 1309;
+        position = 1210;
       };
 
       jamye-plz = {
@@ -162,7 +163,7 @@ in {
         workspace = spaces.developer.id;
         container = containers.personal.id;
         folderParentId = homelab-folder.id;
-        position = 1310;
+        position = 1211;
       };
 
       nix-folder = {
