@@ -56,7 +56,7 @@ in {
 
     userSettings = {
       format_on_save = "on";
-      ui_font_family = "D2CodingLigature Nerd Font";
+      ui_font_family = "D2KodingLigature Nerd Font";
       ui_font_fallbacks = ["MesloLGL Nerd Font"];
       colorize_brackets = true;
       toolbar = {
@@ -134,7 +134,7 @@ in {
       file_finder = {
         modal_max_width = "medium";
       };
-      buffer_font_family = "D2CodingLigature Nerd Font";
+      buffer_font_family = "D2KodingLigature Nerd Font";
       buffer_font_fallbacks = ["MesloLGL Nerd Font"];
       vim_mode = true;
       vim = {
@@ -423,7 +423,7 @@ in {
         shell = "system";
         show_count_badge = true;
         font_size = 16.0;
-        font_family = "D2CodingLigature Nerd Font";
+        font_family = "D2KodingLigature Nerd Font";
         font_fallbacks = ["MesloLGL Nerd Font"];
         env = {
           EDITOR = zedEditor;
