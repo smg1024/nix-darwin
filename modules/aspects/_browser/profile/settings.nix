@@ -53,6 +53,7 @@
     "full-screen-api.transition-duration.leave" = "0 0";
     "full-screen-api.warning.timeout" = 0;
     "geo.provider.network.url" = "https://beacondb.net/v1/geolocate";
+    "intl.accept_languages" = "en-US,en,ko-KR,ko";
     "layout.word_select.eat_space_to_next_word" = false;
     "network.auth.subresource-http-auth-allow" = 1;
     "network.http.referer.XOriginTrimmingPolicy" = 2;
