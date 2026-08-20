@@ -13,7 +13,7 @@ config = {
 
 	-- Appearance
 	color_scheme = "Tokyo Night",
-	font = wezterm.font("D2CodingLigature Nerd Font"),
+	font = wezterm.font("D2KodingLigature Nerd Font"),
 	font_size = 18,
 	background = {
 		{
