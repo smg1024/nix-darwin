@@ -106,6 +106,7 @@ in {
         on-window-detected = [
           (workspaceRule "com.github.wez.wezterm" "1")
           (workspaceRule "dev.zed.Zed-Nightly" "1")
+          (workspaceRule "com.apple.dt.Xcode" "1")
           (workspaceRule "app.zen-browser.zen" "2")
           (workspaceRule "com.thebrowser.Browser" "2")
           (workspaceRule "com.google.Chrome" "2")

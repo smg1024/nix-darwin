@@ -25,6 +25,7 @@
         Pages = 361309726;
         Numbers = 361304891;
         Keynote = 361285480;
+        Xcode = 497799835;
       };
 
       brews = [
