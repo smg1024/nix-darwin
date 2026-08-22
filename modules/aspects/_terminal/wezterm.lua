@@ -1,6 +1,6 @@
 local wezterm = require("wezterm")
 
-config = wezterm.config_builder()
+local config = wezterm.config_builder()
 
 config = {
 	-- Windows

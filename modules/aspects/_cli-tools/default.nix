@@ -13,6 +13,7 @@
     ./marp-cli.nix
     ./npm.nix
     ./ripgrep.nix
+    ./rust.nix
     ./uv.nix
     ./yarn.nix
     ./zoxide.nix

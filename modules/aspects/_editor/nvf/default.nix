@@ -1,18 +1,18 @@
 {lib, ...}: let
-  options = import ./core/options.nix;
-  autocmds = import ./core/autocmds.nix {inherit lib;};
   augroups = import ./core/augroups.nix;
-  keymaps = import ./core/keymaps.nix;
-  fzf-lua = import ./plugins/fzf-lua.nix;
-  mini = import ./plugins/mini.nix;
-  utility = import ./plugins/utility.nix;
+  autocmds = import ./core/autocmds.nix {inherit lib;};
+  autocomplete = import ./lsp/autocomplete.nix;
   binds = import ./plugins/binds.nix;
+  fzf-lua = import ./plugins/fzf-lua.nix;
+  keymaps = import ./core/keymaps.nix;
+  languages = import ./lsp/languages;
+  lsp = import ./lsp/lsp.nix;
+  mini = import ./plugins/mini.nix;
+  options = import ./core/options.nix;
   terminal = import ./plugins/terminal.nix;
   theme = import ./appearance/theme.nix;
-  lsp = import ./lsp/lsp.nix;
   treesitter = import ./lsp/treesitter.nix;
-  autocomplete = import ./lsp/autocomplete.nix;
-  languages = import ./lsp/languages;
+  utility = import ./plugins/utility.nix;
 in {
   programs.nvf = {
     enable = true;
@@ -20,20 +20,20 @@ in {
     settings = {
       vim = {
         inherit
-          options
-          autocmds
           augroups
-          keymaps
-          fzf-lua
-          mini
-          utility
+          autocmds
+          autocomplete
           binds
+          fzf-lua
+          keymaps
+          languages
+          lsp
+          mini
+          options
           terminal
           theme
-          lsp
           treesitter
-          autocomplete
-          languages
+          utility
           ;
         searchCase = "smart";
         hideSearchHighlight = true;
