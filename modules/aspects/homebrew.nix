@@ -33,6 +33,7 @@
       ];
 
       casks = [
+        "android-studio"
         "atoll"
         "batfi"
         "chatgpt"
