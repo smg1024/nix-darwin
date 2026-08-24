@@ -41,6 +41,15 @@ in
           };
           options = lib.mkDefault "--delete-older-than 7d";
         };
+
+        linux-builder = {
+          enable = true;
+          package = pkgs.darwin.linux-builder-vz;
+          systems = [
+            "aarch64-linux"
+            "x86_64-linux"
+          ];
+        };
       };
     };
   }
