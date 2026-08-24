@@ -65,7 +65,7 @@ in {
       tab_size = 2;
       show_signature_help_after_edits = false;
       auto_signature_help = false;
-      redact_private_values = true;
+      redact_private_values = false;
       cli_default_open_behavior = "existing_window";
       edit_predictions = {
         provider = "copilot";
