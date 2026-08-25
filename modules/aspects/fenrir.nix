@@ -31,12 +31,13 @@
       };
 
       brews = [
-        "android-studio"
         "podman"
         "podman-compose"
       ];
 
-      casks = [];
+      casks = [
+        "android-studio"
+      ];
     };
   };
 }
