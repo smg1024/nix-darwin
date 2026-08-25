@@ -15,9 +15,23 @@
     };
   };
 
-  flake.modules.darwin.fenrir = {
+  flake.modules.darwin.fenrir = {pkgs, ...}: {
+    nix.linux-builder = {
+      enable = true;
+      package = pkgs.darwin.linux-builder-vz;
+      systems = [
+        "aarch64-linux"
+        "x86_64-linux"
+      ];
+    };
+
     homebrew = {
+      masApps = {
+        Xcode = 497799835;
+      };
+
       brews = [
+        "android-studio"
         "podman"
         "podman-compose"
       ];

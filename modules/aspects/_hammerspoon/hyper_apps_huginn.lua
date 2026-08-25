@@ -14,6 +14,4 @@ return {
 	s = "com.tinyspeck.slackmacgap",
 	t = "com.github.wez.wezterm",
 	v = "com.google.Chrome",
-	x = "com.apple.dt.Xcode",
-	z = "com.google.android.studio",
 }
