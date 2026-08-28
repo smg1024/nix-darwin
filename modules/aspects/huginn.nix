@@ -1,7 +1,25 @@
-{...}: {
-  repo.homeModules.huginn = {config, ...}: {
-    programs.ssh = {
-      settings = {
+{...}: let
+  inherit
+    (import ./_desktop/aerospace-rules.nix)
+    floatingRule
+    workspaceRule
+    ;
+in {
+  repo.homeModules.huginn = {
+    config,
+    lib,
+    ...
+  }: {
+    programs = {
+      aerospace.settings.on-window-detected = lib.mkAfter [
+        (workspaceRule "com.jetbrains.datagrip" "1")
+        (workspaceRule "notion.id" "4")
+        (workspaceRule "md.obsidian" "4")
+        (workspaceRule "com.tinyspeck.slackmacgap" "9")
+        (floatingRule "com.electron.dockerdesktop")
+      ];
+
+      ssh.settings = {
         "kmeat-ai-workstation" = {
           Hostname = "ai.kmeat.com";
           User = "kmeatai";
@@ -25,7 +43,6 @@
         "docker-desktop"
         "notion"
         "obsidian"
-        "rectangle"
         "slack"
       ];
     };

@@ -42,6 +42,7 @@
         "codexbar"
         "finetune"
         "google-chrome"
+        "google-gemini"
         "hammerspoon"
         "iina"
         "keka"

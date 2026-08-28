@@ -1,18 +1,16 @@
-{...}: {
-  repo.homeModules.fenrir = {
-    programs = {
-      aerospace.settings.workspace-to-monitor-force-assignment = {
-        "1" = ["secondary" "main"];
-        "2" = ["secondary" "main"];
-        "3" = ["secondary" "main"];
-        "4" = ["secondary" "main"];
-        "5" = ["secondary" "main"];
-        "6" = "main";
-        "7" = "main";
-        "8" = "main";
-        "9" = "main";
-      };
-    };
+{...}: let
+  inherit
+    (import ./_desktop/aerospace-rules.nix)
+    floatingRule
+    workspaceRule
+    ;
+in {
+  repo.homeModules.fenrir = {lib, ...}: {
+    programs.aerospace.settings.on-window-detected = lib.mkAfter [
+      (workspaceRule "com.apple.dt.Xcode" "1")
+      (workspaceRule "com.google.android.studio" "1")
+      (workspaceRule "com.hnc.Discord" "8")
+    ];
   };
 
   flake.modules.darwin.fenrir = {pkgs, ...}: {
