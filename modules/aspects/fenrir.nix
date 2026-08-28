@@ -1,7 +1,6 @@
 {...}: let
   inherit
     (import ./_desktop/aerospace-rules.nix)
-    floatingRule
     workspaceRule
     ;
 in {

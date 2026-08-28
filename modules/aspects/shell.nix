@@ -9,7 +9,8 @@
 
   repo.homeModules.shell = {
     imports = [
-      ./_shell
+      ./_shell/zsh.nix
+      ./_shell/starship.nix
     ];
   };
 }

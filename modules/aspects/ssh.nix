@@ -1,7 +1,7 @@
 {...}: {
   repo.homeModules.ssh = {
     imports = [
-      ./_ssh
+      ./_ssh/ssh.nix
     ];
   };
 }

@@ -1,7 +1,7 @@
 {...}: {
   repo.homeModules.terminal = {
     imports = [
-      ./_terminal
+      ./_terminal/wezterm.nix
     ];
   };
 }

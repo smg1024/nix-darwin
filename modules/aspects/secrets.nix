@@ -1,7 +1,7 @@
 {...}: {
   repo.homeModules.secrets = {
     imports = [
-      ./_secrets
+      ./_secrets/sops.nix
     ];
   };
 }
