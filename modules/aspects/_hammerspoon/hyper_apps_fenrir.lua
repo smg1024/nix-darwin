@@ -5,6 +5,7 @@ return {
 	f = "com.apple.finder",
 	g = "com.openai.codex",
 	h = "com.anthropic.claudefordesktop",
+	j = "com.google.GeminiMacOS",
 	k = "com.kakao.KakaoTalkMac",
 	l = "ru.keepcoder.Telegram",
 	m = "com.apple.mail",
