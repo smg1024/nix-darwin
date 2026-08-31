@@ -118,6 +118,7 @@ in {
         (workspaceRule "ru.keepcoder.Telegram" "9")
         (floatingRule "com.apple.finder")
         (floatingRule "com.apple.Notes")
+        (floatingRule "com.apple.ScreenSharing")
         (floatingRule "org.hammerspoon.Hammerspoon")
         (floatingRule "com.utmapp.UTM")
         (floatingRule "com.apple.MobileSMS")
