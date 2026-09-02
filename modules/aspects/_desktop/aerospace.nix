@@ -12,7 +12,7 @@ in {
       config-version = 2;
       persistent-workspaces = ["1" "2" "3" "4" "5" "6" "7" "8" "9"];
       start-at-login = true;
-      accordion-padding = 10;
+      accordion-padding = 20;
       default-root-container-layout = "tiles";
       default-root-container-orientation = "auto";
       on-focused-monitor-changed = ["move-mouse monitor-lazy-center"];
@@ -130,6 +130,13 @@ in {
         (floatingRule "com.logi.optionsplus")
         (floatingRule "com.colliderli.iina")
         (floatingRule "eu.exelban.Stats")
+      ];
+
+      after-startup-command = [
+        "layout --workspace 1 --root h_accordion"
+        "layout --workspace 2 --root h_accordion"
+        "layout --workspace 3 --root h_accordion"
+        "layout --workspace 6 --root h_accordion"
       ];
     };
   };
