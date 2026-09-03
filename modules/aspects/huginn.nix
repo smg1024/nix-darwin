@@ -15,7 +15,7 @@ in {
         (workspaceRule "com.jetbrains.datagrip" "1")
         (workspaceRule "notion.id" "4")
         (workspaceRule "md.obsidian" "4")
-        (workspaceRule "com.tinyspeck.slackmacgap" "9")
+        (workspaceRule "com.tinyspeck.slackmacgap" "8")
         (floatingRule "com.electron.dockerdesktop")
       ];
 
