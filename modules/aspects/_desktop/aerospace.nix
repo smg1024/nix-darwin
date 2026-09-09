@@ -130,6 +130,7 @@ in {
         (floatingRule "com.logi.optionsplus")
         (floatingRule "com.colliderli.iina")
         (floatingRule "eu.exelban.Stats")
+        (floatingRule "com.trongduong.snapzy")
       ];
 
       after-startup-command = [
