@@ -30,6 +30,7 @@
 
       brews = [
         "mole"
+        "rtk"
       ];
 
       casks = [
