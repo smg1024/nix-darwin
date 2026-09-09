@@ -126,16 +126,6 @@ in {
         position = 1207;
       };
 
-      adguardhome = {
-        title = "AdGuard Home";
-        id = "602d1884-d045-4dfb-8b7c-2b2b3e2b6e37";
-        url = "https://adguardhome.ridewithmin.com";
-        workspace = spaces.developer.id;
-        container = containers.personal.id;
-        folderParentId = homelab-folder.id;
-        position = 1208;
-      };
-
       homelab-docs = {
         title = "Homelab Documentation";
         id = "d7ceff41-a9c7-4c5d-aeb8-9591a23acab8";
@@ -143,7 +133,7 @@ in {
         workspace = spaces.developer.id;
         container = containers.personal.id;
         folderParentId = homelab-folder.id;
-        position = 1209;
+        position = 1208;
       };
 
       dev-with-min = {
@@ -153,7 +143,7 @@ in {
         workspace = spaces.developer.id;
         container = containers.personal.id;
         folderParentId = homelab-folder.id;
-        position = 1210;
+        position = 1209;
       };
 
       jamye-plz = {
@@ -163,7 +153,7 @@ in {
         workspace = spaces.developer.id;
         container = containers.personal.id;
         folderParentId = homelab-folder.id;
-        position = 1211;
+        position = 1210;
       };
 
       nix-folder = {
