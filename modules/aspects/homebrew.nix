@@ -51,7 +51,7 @@
         "logi-options+"
         "postmelee/tap/alhangeul"
         "raycast"
-        "shottr"
+        "snapzy"
         "stats"
         "tailscale-app"
         "telegram"
