@@ -36,6 +36,7 @@
 
       casks = [
         "antigravity-cli"
+        "aside"
         "atoll"
         "batfi"
         "chatgpt"
