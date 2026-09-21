@@ -104,6 +104,7 @@ in {
         (workspaceRule "dev.zed.Zed-Nightly" "1")
         (workspaceRule "app.zen-browser.zen" "2")
         (workspaceRule "com.google.Chrome" "2")
+        (workspaceRule "at.studio.AsideBrowser" "2")
         (workspaceRule "com.anthropic.claudefordesktop" "3")
         (workspaceRule "com.openai.codex" "3")
         (workspaceRule "com.apple.campo" "3")
