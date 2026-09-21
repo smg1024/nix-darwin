@@ -29,6 +29,7 @@
       };
 
       brews = [
+        "cue"
         "mole"
         "rtk"
       ];
