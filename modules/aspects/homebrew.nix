@@ -34,6 +34,7 @@
       ];
 
       casks = [
+        "antigravity-cli"
         "atoll"
         "batfi"
         "chatgpt"
@@ -43,7 +44,6 @@
         "codexbar"
         "finetune"
         "google-chrome"
-        "google-gemini"
         "hammerspoon"
         "iina"
         "keka"
