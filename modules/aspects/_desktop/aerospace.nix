@@ -106,7 +106,7 @@ in {
         (workspaceRule "com.google.Chrome" "2")
         (workspaceRule "com.anthropic.claudefordesktop" "3")
         (workspaceRule "com.openai.codex" "3")
-        (workspaceRule "com.google.GeminiMacOS" "3")
+        (workspaceRule "com.apple.campo" "3")
         (workspaceRule "com.postmelee.alhangeul" "4")
         (workspaceRule "com.apple.Numbers" "4")
         (workspaceRule "com.apple.Pages" "4")
