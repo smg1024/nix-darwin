@@ -120,6 +120,7 @@ in {
         (floatingRule "com.apple.finder")
         (floatingRule "com.apple.Notes")
         (floatingRule "com.apple.ScreenSharing")
+        (floatingRule "com.apple.dt.Devices")
         (floatingRule "org.hammerspoon.Hammerspoon")
         (floatingRule "com.utmapp.UTM")
         (floatingRule "com.apple.MobileSMS")
