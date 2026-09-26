@@ -1,9 +1,12 @@
-{...}: {
+{pkgs, ...}: {
+  home.packages = with pkgs; [
+    deja
+  ];
+
   programs.zsh = {
     enable = true;
 
     enableCompletion = true;
-    autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
     defaultKeymap = "viins";
@@ -16,6 +19,14 @@
       ignoreDups = true;
       ignoreSpace = true;
     };
+
+    initContent = ''
+      if [[ -r "$HOME/.local/share/deja/init.zsh" ]]; then
+        source "$HOME/.local/share/deja/init.zsh"
+      else
+        eval "$(${pkgs.deja}/bin/deja init zsh)"
+      fi
+    '';
 
     shellAliases = {
       nixconfig = "cd ~/nix-darwin && vim flake.nix";
